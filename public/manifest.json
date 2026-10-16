@@ -1,0 +1,13 @@
+{
+  "name": "Namibian Insight",
+  "short_name": "Insight",
+  "description": "Student-led digital journalism from Namibia and beyond.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f3ed",
+  "theme_color": "#172521",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
