@@ -113,6 +113,15 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    if (!supabase || !session) return;
+    let cancelled = false;
+    supabase.from('stories').select('*').order('published_at', { ascending: false }).then(({ data }) => {
+      if (!cancelled && data) setStories(data);
+    });
+    return () => { cancelled = true; };
+  }, [session]);
+
+  useEffect(() => {
     document.documentElement.classList.toggle('dark', dark);
     try { localStorage.setItem('ni-theme', dark ? 'dark' : 'light'); } catch {}
   }, [dark]);
